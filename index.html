@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro de Cliente - Hora Marcada</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/style.css">
+</head>
+
+<body class="bg-dark">
+    <div class="container d-flex justify-content-center align-items-center min-vh-100 py-4">
+        <div class="card card-custom w-100" style="max-width: 500px;">
+            <div class="card-body p-5">
+                <div class="text-center mb-4">
+                    <h1 class="h2 text-white mb-2">
+                        Hora<span class="text-wine">Marcada</span>
+                    </h1>
+                    <p class="text-muted small">Cadastro de Cliente</p>
+                </div>
+
+                <div class="alert alert-success d-none" id="successMessage" role="alert">
+                    Cadastro realizado com sucesso! Redirecionando...
+                </div>
+
+                <form id="cadastroForm" novalidate>
+                    <div  class="mb-3">
+                        <label for="nome" class="form-label text-white fw-500">Nome Completo *</label>
+                        <input type="text" class="form-control form-control-custom" id="nome" name="nome"
+                            placeholder="Digite seu nome completo" required>
+                        <div class="invalid-feedback text-danger small d-none" id="erroNome"></div>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="cpf" class="form-label text-white fw-500">CPF *</label>
+                        <input type="text" class="form-control form-control-custom" id="cpf" name="cpf"
+                            placeholder="000.000.000-00" maxlength="14" required>
+                        <div class="invalid-feedback text-danger small d-none" id="erroCpf"></div>
+                    </div>
+
+                    <div  class="mb-3">
+                        <label for="datanascimento" class="form-label text-white fw-500">Data de Nascimento *</label>
+                        <input type="date" class="form-control form-control-custom" id="datanascimento"
+                            name="datanascimento" required>
+                        <div class="invalid-feedback text-danger small d-none" id="erroData"></div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-6 mb-3">
+                            <label for="email" class="form-label text-white fw-500">Email *</label>
+                            <input type="email" class="form-control form-control-custom" id="email" name="email" 
+                                   placeholder="seu@email.com" required>
+                            <div class="invalid-feedback text-danger small d-none" id="erroEmail"></div>
+                        </div>
+
+                        <div class="col-md-6 mb-3">
+                            <label for="telefone" class="form-label text-white fw-500">Telefone *</label>
+                            <input type="tel" class="form-control form-control-custom" id="telefone" name="telefone" 
+                                   placeholder="(11) 99999-9999" maxlength="15" required>
+                            <div class="invalid-feedback text-danger small d-none" id="erroTelefone"></div>
+                        </div>
+                    </div>
+
+                    <div class="mb-4">
+                        <label for="endereco" class="form-label text-white fw-500">Endereço Completo *</label>
+                        <input type="text" class="form-control form-control-custom" id="endereco" name="endereco"
+                            placeholder="Rua, número, complemento, cidade, estado" required>
+                        <div class="invalid-feedback text-danger small d-none" id="erroEndereco"></div>
+                    </div>
+
+                    <div class="d-grid gap-2 d-sm-flex">
+                        <button type="button" class="btn btn-outline-secondary"
+                            onclick="window.location.href='login.html'">
+                            Voltar
+                        </button>
+                        <button type="submit" class="btn btn-wine flex-grow-1"
+                            onclick="cadastraNovoContato()">
+                            Cadastrar
+                        </button>
+                    </div>
+
+                    <div class="text-center mt-3">
+                        <p class="text-muted small">
+                            Já tem uma conta? <a href="login.html" class="text-wine text-decoration-none fw-bold">Faça
+                                login aqui</a>
+                        </p>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="/cliente.js"></script>
+</body>
+
+</html>
